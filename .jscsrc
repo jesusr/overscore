@@ -1,0 +1,94 @@
+{
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch"
+  ],
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "maximumLineLength": {
+    "value": 132,
+    "allowComments": true,
+    "allowRegex": true
+  },
+  "validateIndentation": 2,
+  "validateQuoteMarks": "'",
+  "validateParameterSeparator": ", ",
+
+  "disallowMultipleLineStrings": true,
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": false,
+  "disallowTrailingComma": false,
+  "disallowSpaceAfterPrefixUnaryOperators": true,
+  "disallowSpacesInCallExpression": true,
+  "disallowPaddingNewlinesInBlocks": {
+    "open": false,
+    "close": true
+  },
+  "disallowMultipleLineBreaks": true,
+  "requireCommaBeforeLineBreak": false,
+  "requireCapitalizedConstructors": true,
+
+  "disallowKeywordsOnNewLine": ["else", "catch", "finally"],
+
+  "requireSpaceAfterKeywords": [
+    "if",
+    "else",
+    "for",
+    "switch",
+    "return",
+    "try"
+  ],
+  "requireSpaceBeforeBinaryOperators": [
+    "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+    "&=", "|=", "^=",
+    "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+    "|", "^", "&&", "||", "===", "==", ">=",
+    "<=", "<", ">", "!=", "!=="
+  ],
+  "requireSpaceAfterBinaryOperators": true,
+  "requireSpacesInConditionalExpression": {
+    "afterTest": true,
+    "beforeConsequent": true,
+    "afterConsequent": false,
+    "beforeAlternate": false
+  },
+  "requireSpaceBeforeBlockStatements": true,
+  "requireLineFeedAtFileEnd": true,
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "disallowSpacesInsideObjectBrackets": false,
+  "disallowSpacesInsideArrayBrackets": "nested",
+  "disallowSpacesInsideParentheses": true,
+  "disallowSpaceAfterObjectKeys": true,
+  "requireSpaceBeforeObjectValues": true,
+
+  "disallowNewlineBeforeBlockStatements": true,
+
+  "fileExtensions": [".js", "jscs", ".es6"],
+
+  "requireSpaceBetweenArguments": true,
+  "requireParenthesesAroundIIFE": true,
+
+  "disallowKeywords": ["with"],
+  "disallowImplicitTypeConversion": ["string"],
+  "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+
+  "safeContextKeyword": "_this",
+  "requireBlocksOnNewline": 1,
+  "requireLineBreakAfterVariableAssignment": true,
+  "requireMultipleVarDecl": "onevar",
+
+  "maxErrors": -1,
+
+  "excludeFiles": [
+
+  ]
+}
