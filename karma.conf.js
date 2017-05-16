@@ -2,7 +2,6 @@ var path = require('path');
 module.exports = function(config) {
   config.set({
     files: [
-      'node_modules/phantomjs-polyfill/bind-polyfill.js',
       'node_modules/sinon/pkg/sinon.js',
       'overscore.spec.js'
     ],
@@ -16,6 +15,15 @@ module.exports = function(config) {
       }
     },
     reporters: ['spec', 'coverage'],
+    coverageReporter: {
+      dir: 'build/coverage/',
+      reporters: [
+        { type: 'html', subdir: 'html' },
+        { type: 'text' },
+        { type: 'text-summary' },
+        { type: 'lcov', subdir: 'report-lcov' },
+      ]
+    },
     webpack: {
       module: {
         loaders: [{
@@ -43,6 +51,13 @@ module.exports = function(config) {
           include: /(src\/data)/,
           exclude: /(node_modules)|(Gulpfile\.tmp)|(assets)/,
           loader: 'json-loader'
+        }, {
+          test: /\.js$/,
+          exclude: /(node_modules)|(Gulpfile\.tmp)|(assets)/,
+          loader: 'istanbul-instrumenter-loader',
+          query: {
+            esModules: true
+          }
         }]
       },
       resolve: {
@@ -61,6 +76,7 @@ module.exports = function(config) {
     },
     plugins: [
       require('karma-webpack'),
+      require('istanbul-instrumenter-loader'),
       require('karma-mocha'),
       require('karma-coverage'),
       require('karma-phantomjs-launcher'),
