@@ -4,3 +4,4 @@ before_script:
 script: npm test
 
 language: node_js
+  - "6"
