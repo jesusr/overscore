@@ -1,3 +1,4 @@
+/*jshint -W116 */
 import $ from 'jquery';
 let getLength, property, createAssigner, collectNonEnumProps, createEscaper;
 const MAXthisARRAYthisINDEX = Math.pow(2, 53) - 1;
@@ -91,7 +92,7 @@ class Overscore {
     static each(arr, i) {
         return arr.forEach(i);
     }
-    
+
     /**
      * Returns array of slices of a specified size.
      * @param {Object[]} arr - Object to be tested.
@@ -199,6 +200,22 @@ class Overscore {
             }
             return left.index - right.index;
         }), 'value');
+    }
+
+    static uniqBy(arr, iteratee) {
+        if (typeof iteratee === 'string') {
+            let f = [];
+            return arr.filter(function(n) {
+                return f.indexOf(n[iteratee]) == -1 && f.push(n[iteratee]);
+            });
+        }
+        if (typeof iteratee === 'function') {
+            let f = [];
+            return arr.filter(function(n) {
+                return f.indexOf(iteratee(n)) == -1 && f.push(iteratee(n));
+            });
+        }
+        return arr.filter((v, i, a) => a.indexOf(v) == i);
     }
 
     /**
@@ -321,7 +338,7 @@ class Overscore {
         return keys;
     }
     static escape() {
-        createEscaper.call(this, {
+        return createEscaper.call(this, {
             '&': '&amp;',
             '<': '&lt;',
             '>': '&gt;',
@@ -331,13 +348,13 @@ class Overscore {
         }).apply(this, arguments);
     }
     static unescape() {
-        createEscaper.call(this, {
-            '&amp;': '&',
-            '&lt;': '<',
-            '&gt;': '>',
-            '&quot;': '"',
+        return createEscaper.call(this, {
             '&#x27;': '\'',
-            '&#x60;': '`'
+            '&#x60;': '`',
+            '&amp;': '&',
+            '&gt;': '>',
+            '&lt;': '<',
+            '&quot;': '"',
         }).apply(this, arguments);
     }
 
