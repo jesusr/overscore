@@ -1,0 +1,4 @@
+# circle.yml
+machine:
+  environment:
+    CODECLIMATE_REPO_TOKEN: 4ccc27a7021386598c565580054d1c83efc6443a7743f83f36def68f7396a0cf
