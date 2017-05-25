@@ -4,7 +4,9 @@
   "description": "Underscore replacement",
   "main": "overscore.js",
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run"
+    "test": "./node_modules/.bin/karma start --single-run",
+    "compile:minimal": "webpack --progress --colors --config ./webpack.minimal.config.js",
+    "compile:complete": "webpack --progress --colors --config ./webpack.complete.config.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.1",
+    "babili-webpack-plugin": "^0.1.1",
     "chai": "^3.5.0",
     "istanbul-instrumenter-loader": "^2.0.0",
     "karma": "^1.5.0",
