@@ -2,7 +2,7 @@
   "name": "overscore",
   "version": "0.1.0",
   "description": "Underscore replacement",
-  "main": "overscore.js",
+  "main": "overscore.es5.complete.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start --single-run",
     "compile:minimal": "webpack --progress --colors --config ./webpack.minimal.config.js",
