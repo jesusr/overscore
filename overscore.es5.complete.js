@@ -567,7 +567,7 @@ var Overscore = function () {
   }, {
     key: 'result',
     value: function result(object, property, fallback) {
-      return !object ? fallback || null : _.isFunction(object[property]) ? object[property].call(object) : object[property];
+      return !object ? fallback || null : this.isFunction(object[property]) ? object[property].call(object) : object[property];
     }
   }]);
 

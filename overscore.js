@@ -360,7 +360,7 @@ class Overscore {
   }
   static result(object, property, fallback) {
     return !object ? fallback || null :
-      _.isFunction(object[property]) ? object[property].call(object) : object[property];
+      this.isFunction(object[property]) ? object[property].call(object) : object[property];
   }
 }
 
