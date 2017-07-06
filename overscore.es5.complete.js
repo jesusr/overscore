@@ -564,6 +564,11 @@ var Overscore = function () {
         '&quot;': '"'
       }).apply(this, arguments);
     }
+  }, {
+    key: 'result',
+    value: function result(object, property, fallback) {
+      return !object ? fallback || null : _.isFunction(object[property]) ? object[property].call(object) : object[property];
+    }
   }]);
 
   return Overscore;
