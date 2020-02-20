@@ -1,7 +1,7 @@
 
 # overscore
 
-[https://github.com/jashkenas/underscore](https://github.com/jashkenas/underscore) lightweight replacement, forcing the use of es6 functions.
+[**Underscore**](https://github.com/jashkenas/underscore) lightweight replacement, forcing the use of es6 functions.
 
 [![Build Status](https://travis-ci.org/jesusr/overscore.svg?branch=master)](https://travis-ci.org/jesusr/overscore)
 
